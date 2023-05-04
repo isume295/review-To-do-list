@@ -3,15 +3,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
     <title>To do list</title>
 </head>
 <body>
     <header></header>
     <main>
         <div class="main-container">
+            <label class="error">error</label>
         <div class="list-container">
-            <span>Todays to do</span>
-            <input type="text" name="task" placeholder="Add to do list"/>
+            <span class="title">Todays to do</span>
+            <div class="add">
+                <input class="new-task" type="text" name="task" placeholder="Add to do list"/>
+                <button class="add-list"><i class="fa-solid fa-plus"></i></button>
+            </div>
 
             <ul class="lists">   
             </ul>
