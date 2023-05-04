@@ -1,32 +1,29 @@
 import './style.css';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import '@fortawesome/fontawesome-free/css/all.css';
+import Task from '../modules/tasks.js';
+import List from '../modules/taskList.js';
 
-const tasks = [
-  {
-    description: 'task 1',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'task 2',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'task 3',
-    completed: false,
-    index: 2,
-  },
-];
-const list = document.querySelector('ul');
-const display = () => {
-  list.innerHTML = tasks.sort((a, b) => a.index - b.index).reduce((output, task) => (
-    `${output
-    }
-             <li>${task.description}</li>
-            `
-  ), '');
-};
+const newInput = document.querySelector('.new-task');
+const errorMessage = document.querySelector('.error');
+const list = new List();
 
 window.onload = () => {
-  display();
+  list.display();
 };
+
+document.querySelector('.add-list').addEventListener('click', () => {
+  const i = list.tasks.length;
+  if (newInput.value === '') {
+    errorMessage.innerHTML = 'Please enter a task to add to the to-do list';
+    errorMessage.classList.remove('error');
+    document.querySelector('.list-container').classList.add('shake');
+    setTimeout(() => {
+      document.querySelector('.list-container').classList.remove('shake');
+    }, 1000);
+  } else {
+    const newTask = new Task(newInput.value, false, i + 1);
+    list.addList(newTask);
+    list.display();
+  }
+});
