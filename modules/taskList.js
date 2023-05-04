@@ -23,6 +23,7 @@ export default class List {
       for (let i = 0; i < this.tasks.length; i += 1) {
         this.tasks[i].index = i + 1;
       }
+      localStorage.setItem('tasks', JSON.stringify(this.tasks));
     };
 
     updateList = (task, t, icon) => {
@@ -65,8 +66,8 @@ export default class List {
         deleteList.forEach((btn, index) => {
           btn.addEventListener('click', () => {
             this.removeList(this.tasks[index]);
-            this.display();
             this.sort();
+            this.display();
           });
         });
         const editList = document.querySelectorAll('.edit');
