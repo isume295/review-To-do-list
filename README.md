@@ -180,5 +180,5 @@ I would like to thank Microverse for providing the necessary tools to complete t
 <!-- LICENSE -->
 
 ## :memo: License <a name="license"></a>
-This project is [MIT] (./LICENSE) licensed.
+This project is [MIT](./LICENSE) licensed.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
