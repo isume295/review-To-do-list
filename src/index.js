@@ -12,7 +12,8 @@ window.onload = () => {
   list.display();
 };
 
-document.querySelector('.add-list').addEventListener('click', () => {
+document.querySelector('.add-list').addEventListener('click', (e) => {
+  e.preventDefault();
   const i = list.tasks.length;
   if (newInput.value === '') {
     errorMessage.innerHTML = 'Please enter a task to add to the to-do list';
@@ -26,4 +27,11 @@ document.querySelector('.add-list').addEventListener('click', () => {
     list.addList(newTask);
     list.display();
   }
+});
+
+const clearAll = document.querySelector('.clearAll');
+clearAll.addEventListener('click', () => {
+  list.tasks = list.tasks.filter((task) => task.completed === false);
+  localStorage.setItem('tasks', JSON.stringify(list.tasks));
+  list.display();
 });
