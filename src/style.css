@@ -19,7 +19,7 @@ body {
 }
 
 .list-container {
-  width: 80%;
+  width: 95%;
   background-color: white;
   display: flex;
   flex-direction: column;
