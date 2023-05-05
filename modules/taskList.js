@@ -1,3 +1,5 @@
+import status from './status.js';
+
 const list = document.querySelector('ul');
 const newInput = document.querySelector('.new-task');
 const errorMessage = document.querySelector('.error');
@@ -50,7 +52,7 @@ export default class List {
                    <li>
                    <div class="to-do-list-container">
                    <div class="list-input-container">
-                   <input class="check-list" type="checkbox" id="myCheckbox" name="myCheckbox">
+                   <input class="check-list" type="checkbox" id="myCheckbox" name="myCheckbox" ${task.completed ? 'checked' : ''}>
                    <input class="task" value='${task.description}' readonly/>
                    </div>
                    <div class="list-btn-container">
@@ -61,7 +63,6 @@ export default class List {
                    </li>
                   `
         ), '');
-
         const deleteList = document.querySelectorAll('.delete');
         deleteList.forEach((btn, index) => {
           btn.addEventListener('click', () => {
@@ -84,6 +85,14 @@ export default class List {
               this.display();
               c += 1;
             }
+          });
+        });
+
+        const checkList = document.querySelectorAll('.check-list');
+        checkList.forEach((btn, index) => {
+          btn.addEventListener('click', () => {
+            status(this.tasks[index]);
+            localStorage.setItem('tasks', JSON.stringify(this.tasks));
           });
         });
       };

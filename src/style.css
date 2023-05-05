@@ -44,14 +44,15 @@ input {
 }
 
 .add {
+  margin: 0;
   display: flex;
   justify-content: space-between;
 }
 
-span,
+h1,
 ul li,
 .add,
-.clear span {
+span {
   padding: 15px 6px;
   border-bottom: 1px solid rgb(193, 190, 190);
 }
@@ -132,5 +133,12 @@ button:hover {
 }
 
 .title {
+  font-size: 20px;
   font-weight: 900;
+  padding: 15px 6px;
+  margin: 0;
+}
+
+.clearAll {
+  margin: 15px;
 }
