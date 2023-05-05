@@ -19,7 +19,7 @@ body {
 }
 
 .list-container {
-  width: 35%;
+  width: 80%;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -141,4 +141,10 @@ button:hover {
 
 .clearAll {
   margin: 15px;
+}
+
+@media (min-width: 768px) {
+  .list-container {
+    width: 40%;
+  }
 }
