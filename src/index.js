@@ -9,6 +9,8 @@ const errorMessage = document.querySelector('.error');
 const list = new List();
 
 // display to do list from local storage
+
+
 window.onload = () => {
   list.display();
 };
