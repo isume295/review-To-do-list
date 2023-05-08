@@ -66,7 +66,7 @@
 
 <!-- LIVE DEMO -->
 ## :rocket: Live Demo <a name="live-demo"></a>
-  live demo [see](https://isume295.github.io/To_Do_list/dist/)
+  live demo [see](https://isume295.github.io/review-To-do-list/dist/)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
@@ -114,7 +114,7 @@ To run tests, run the following command:
 You can deploy this project using:
 GitHub Pages
 
-https://isume295.github.io/To_Do_list/dist/
+ [(https://isume295.github.io/review-To-do-list/dist/)]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
