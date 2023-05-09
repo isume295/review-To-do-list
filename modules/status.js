@@ -1,7 +1,5 @@
+// change completion status
 export default function status(task) {
-  if (!task.completed) {
-    task.completed = true;
-  } else if (task.completed) {
-    task.completed = false;
-  }
+  // eslint-disable-next-line no-unused-expressions
+  !task.completed ? task.completed = true : task.completed = false;
 }

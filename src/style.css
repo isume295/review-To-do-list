@@ -7,6 +7,7 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+/* main container */
 .main-container {
   width: 100%;
   height: 100%;
@@ -18,6 +19,7 @@ body {
   gap: 15px;
 }
 
+/* .list container */
 .list-container {
   width: 95%;
   background-color: white;
@@ -26,6 +28,7 @@ body {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* unordered list container */
 ul {
   list-style: none;
   display: flex;
@@ -91,6 +94,7 @@ label {
   margin: 0;
 }
 
+/* validation animation */
 @keyframes shake {
   10%,
   90% {
@@ -118,6 +122,7 @@ label {
   animation: shake 1s;
 }
 
+/* validation error color */
 .color {
   color: red;
 }

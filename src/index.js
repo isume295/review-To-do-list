@@ -8,10 +8,13 @@ const newInput = document.querySelector('.new-task');
 const errorMessage = document.querySelector('.error');
 const list = new List();
 
+// display to do list from local storage
+
 window.onload = () => {
   list.display();
 };
 
+// click event to add new list when user click the add button
 document.querySelector('.add-list').addEventListener('click', (e) => {
   e.preventDefault();
   const i = list.tasks.length;
@@ -29,6 +32,7 @@ document.querySelector('.add-list').addEventListener('click', (e) => {
   }
 });
 
+// clear/delete all selected list functionality
 const clearAll = document.querySelector('.clearAll');
 clearAll.addEventListener('click', () => {
   list.tasks = list.tasks.filter((task) => task.completed === false);

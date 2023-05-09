@@ -3,17 +3,21 @@ import status from './status.js';
 const list = document.querySelector('ul');
 const newInput = document.querySelector('.new-task');
 const errorMessage = document.querySelector('.error');
+
+// list class
 export default class List {
   constructor() {
     this.tasks = JSON.parse(localStorage.getItem('tasks')) || [];
   }
 
+  // remove task from the list function
    removeList = (task) => {
      this.tasks = this.tasks.filter((t) => t !== task);
      localStorage.setItem('tasks', JSON.stringify(this.tasks));
      list.innerHTML = '';
    };
 
+   // add task to the list function
     addList = (task) => {
       this.tasks.push(task);
       localStorage.setItem('tasks', JSON.stringify(this.tasks));
@@ -21,6 +25,7 @@ export default class List {
       errorMessage.classList.add('error');
     };
 
+    // sort task index of the list function
     sort = () => {
       for (let i = 0; i < this.tasks.length; i += 1) {
         this.tasks[i].index = i + 1;
@@ -28,6 +33,7 @@ export default class List {
       localStorage.setItem('tasks', JSON.stringify(this.tasks));
     };
 
+    // edit task description of the list function
     updateList = (task, t, icon) => {
       icon.classList.toggle('fa-pen-to-square');
       icon.classList.toggle('fa-check');
@@ -39,12 +45,14 @@ export default class List {
       });
     };
 
+    // finsh editing task description of the list function
       completeUpdate = (task) => {
         task.readOnly = true;
         list.innerHTML = '';
         localStorage.setItem('tasks', JSON.stringify(this.tasks));
       };
 
+      // display lists
       display = () => {
         list.innerHTML = this.tasks.sort((a, b) => a.index - b.index).reduce((output, task) => (
           `${output
