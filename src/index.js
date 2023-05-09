@@ -14,7 +14,7 @@ window.onload = () => {
   list.display();
 };
 
-// click event when user click the add button
+// click event to add new list when user click the add button
 document.querySelector('.add-list').addEventListener('click', (e) => {
   e.preventDefault();
   const i = list.tasks.length;
